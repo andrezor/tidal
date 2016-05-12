@@ -48,9 +48,7 @@
 								$("#output").append("Date: "+ JSON.stringify(data.extremes[y].date) +" | Type:"+ JSON.stringify(data.extremes[y].type) +"<br/>");
 								var t = data.extremes[y].date;
 								var o = t.split("T");
-								var p = o.split(", ");
-								console.log(JSON.stringify(p));
-								
+								console.log(JSON.stringify(o));
 							}
 					 });
 				 });
