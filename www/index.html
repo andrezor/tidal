@@ -39,16 +39,17 @@
 					alert('App Loader Successful');
 					$.support.cors=true;
 					console.log("Working.");
-					var lat = 50.8290;
-					var lon = 0.8577;
+					var lat = 51.451012;
+					var lon = -3.166752;
 					 $.getJSON("https://www.worldtides.info/api?extremes&lat=" + lat + "&lon=" + lon+ "&key=5a7e744f-bbb2-4027-a8bd-57077df0af8c",function(data){
 						var k = data.extremes.length;
 							for (var y=0; y<k; y++) {
-								console.log("Type: " + JSON.stringify(data.extremes[y].type));
-								$("#output").append("Date: "+ JSON.stringify(data.extremes[y].date) +" | Type:"+ JSON.stringify(data.extremes[y].type) +"<br/>");
 								var t = data.extremes[y].date;
 								var o = t.split("T");
-								console.log(JSON.stringify(o));
+								console.log("Date: " + o[0] + ", Time: " + o[1]);
+								console.log("Type: " + JSON.stringify(data.extremes[y].type));
+								$("#output").append("Date: "+ JSON.stringify(o[0]) + ", Time: " + JSON.stringify(o[1]) + ", Type:"+ JSON.stringify(data.extremes[y].type) +"<br/>");
+								
 							}
 					 });
 				 });
